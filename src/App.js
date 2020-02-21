@@ -8,7 +8,7 @@ import Products from './components/Products';
 import ShoppingCart from './components/ShoppingCart';
 
 //contexts
-import { ProductContet } from './contexts/ProductContext';
+import { ProductContext } from './contexts/ProductContext';
 import { CartContext } from './contexts/CartContext';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<ProductContextProvider value={{products, addItem}}>
+			<ProductContext.Provider value={{products, addItem}}>
 			<CartContext.Provider value = {{cart}}>
 			<Navigation cart={cart} />
 
@@ -39,7 +39,7 @@ function App() {
 				render={() => <ShoppingCart cart={cart} />}
 			/>
 			</CartContext.Provider>
-			</ProductContextProvider>
+			</ProductContext.Provider>
 		</div>
 	);
 }
